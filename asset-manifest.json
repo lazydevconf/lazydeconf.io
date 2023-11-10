@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/your-app/static/css/main.63ffa884.css",
-    "main.js": "/your-app/static/js/main.ec807756.js",
+    "main.js": "/your-app/static/js/main.cde22190.js",
     "static/media/hero-dark.jpg": "/your-app/static/media/hero-dark.37f2556d620821979e99.jpg",
     "static/media/hero-light.jpg": "/your-app/static/media/hero-light.78b77836d8aee4d7d3cb.jpg",
     "service-worker.js": "/your-app/service-worker.js",
@@ -10,10 +10,10 @@
     "static/media/logo.svg": "/your-app/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/your-app/index.html",
     "main.63ffa884.css.map": "/your-app/static/css/main.63ffa884.css.map",
-    "main.ec807756.js.map": "/your-app/static/js/main.ec807756.js.map"
+    "main.cde22190.js.map": "/your-app/static/js/main.cde22190.js.map"
   },
   "entrypoints": [
     "static/css/main.63ffa884.css",
-    "static/js/main.ec807756.js"
+    "static/js/main.cde22190.js"
   ]
 }
