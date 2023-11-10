@@ -11,7 +11,7 @@ Variables
   /* Primary Color */
   --primary: #61DBFB;
   --primary-dark: #316e7e;
-  --border: 1px solid #61DBFB;
+  --border: 1px solid #ff293b;
   --transition: all 0.3s linear;
   --nav-height: 61px;
   --min-footer-height: 11vh;
@@ -34,11 +34,6 @@ a:hover {
 
 .navbar {
   border-bottom: var(--border);
-
-  img {
-    background: ${({ theme }) =>
-      theme.name === "light" ? "#45413C" : "#797B7B"};
-  }
 }
 
 .link-icons {
@@ -60,7 +55,7 @@ a:hover {
 }
 
 .title {
-    font-family: "Permanent Marker";
+    font-family: "Pretendard";
 }
 
 .card {
@@ -84,7 +79,7 @@ a:hover {
 
 @media screen and (min-width: 800px) {
   .link-icons {
-    font-size: 2.5rem;
+    font-size: 5rem;
   }
   .form-group {
       max-width: 750px;
