@@ -11,13 +11,10 @@ import { BackToTop } from "../components/globalStyledComponents";
 import Footer from "../components/Footer";
 
 export default function Home() {
-  const { name } = useSelector(selectData);
-
   React.useEffect(
     function () {
-      document.title = `${name} | Portfolio`;
+      document.title = `게으른 개발자 컨퍼런스`;
     },
-    [name]
   );
 
   return (
