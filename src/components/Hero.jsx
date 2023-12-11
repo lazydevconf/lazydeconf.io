@@ -29,8 +29,8 @@ const StyledHero = styled.header`
     height: 100%;
     background: ${({ theme }) =>
       theme.name === "light"
-        ? "linear-gradient(135deg, var(--primary), var(--bs-light))"
-        : "linear-gradient(135deg, var(--primary), var(--bs-dark))"};
+        ? "linear-gradient(135deg, var(--primary), var(--point))"
+        : "linear-gradient(150deg, var(--primary), var(--point))"};
     z-index: -2;
   }
 
@@ -76,6 +76,12 @@ const StyledHero = styled.header`
           ? `url(${Light}) center center fixed no-repeat`
           : `url(${Dark}) center center fixed no-repeat`};
       background-size: cover;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .title {
+      font-size: 1.815rem !important;
     }
   }
 
