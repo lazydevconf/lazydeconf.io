@@ -33,10 +33,6 @@ a:hover {
   cursor: pointer;
 }
 
-.navbar {
-  border-bottom: var(--border);
-}
-
 .link-icons {
   line-height: 0;
   font-size: 2.25rem;
@@ -57,6 +53,7 @@ a:hover {
 
 .title {
     font-family: "Pretendard";
+    font-weight: 600
 }
 
 .card {

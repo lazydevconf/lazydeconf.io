@@ -30,7 +30,11 @@ const StyledHero = styled.header`
     background: ${({ theme }) =>
       theme.name === "light"
         ? "linear-gradient(135deg, var(--primary), var(--point))"
-        : "linear-gradient(150deg, var(--primary), var(--point))"};
+        : "linear-gradient(135deg, var(--primary), var(--point))"};
+    background: ${({ theme }) =>
+      theme.name === "light"
+        ? "-webkit-linear-gradient(135deg, var(--primary), var(--point))"
+        : "-webkit-linear-gradient(135deg, var(--primary), var(--point))"};
     z-index: -2;
   }
 
@@ -118,7 +122,7 @@ export default function Hero() {
         </Row>
         <Row className="align-items-center text-center">
           <h1 className="mb-3 display-3 title">게으른개발자 컨퍼런스</h1>
-          <h1 className="mb-3 display-3 title"><span className="stroke"> 2023.01.27. </span> 삼성동 테크살롱 테이크오프 & 랜딩</h1>
+          <h1 className="mb-3 display-3 title"><span className="stroke"> 2024.01.27. </span> 삼성동 테크살롱 테이크오프 & 랜딩</h1>
         </Row>
         <Row className="align-items-end down-container">
           <Col className="m-4 text-center">

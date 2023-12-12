@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useAppContext } from "../appContext";
 import { Link as ScrollLink } from "react-scroll";
@@ -77,6 +77,7 @@ const defaultProps = {
 };
 
 export default function NavBar({ Logo }) {
+  const [isNavLinkActive, setIsNavLinkActive] = useState(false);
   const { theme, isExpanded, closeExpanded, toggleExpanded } = useAppContext();
   const { pathname } = useLocation();
   const navLinks = {
@@ -85,13 +86,27 @@ export default function NavBar({ Logo }) {
       { id: "2R", name: "All Projects", route: "/All-Projects" },
     ],
     to: [
-      { id: "1T", name: "Home", to: "Home" },
-      { id: "2T", name: "About Me", to: "About" },
-      { id: "3T", name: "Skills", to: "Skills" },
-      { id: "4T", name: "Projects", to: "Projects" },
-      { id: "5T", name: "Contact", to: "Contact" },
+      { id: "1T", name: "ㄱㄱㅋ 2024", to: "Home" },
+      { id: "2T", name: "ㄱㄱㅋ 소개", to: "About" },
+      { id: "3T", name: "발표/프로그램", to: "Skills" },
+      { id: "4T", name: "발표 상세내용", to: "Projects" },
+      { id: "5T", name: "오시는 길", to: "Contact" },
     ],
   };
+
+  const checkActiveNavLink = () => {
+    const activeNavLink = document.querySelectorAll(".nav-link.active:not([id='1T'])").length;
+    console.log(activeNavLink);
+    setIsNavLinkActive(activeNavLink);
+  }
+
+  useEffect(() => {
+    const handleScroll = event => {
+      checkActiveNavLink();
+    };
+
+    window.addEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
@@ -104,6 +119,9 @@ export default function NavBar({ Logo }) {
         bg={theme === "light" ? "light" : "dark"}
         variant={theme === "light" ? "light" : "dark"}
         fixed="top"
+        style={{
+          borderBottom: isNavLinkActive ? '1px solid #495057' : 'transparent'
+        }}
       >
         <Container>
           <Navbar.Brand>
@@ -129,7 +147,8 @@ export default function NavBar({ Logo }) {
                           to={el.to}
                           spy={true}
                           activeClass="active"
-                          className="nav-link"
+                          className="nav-link title"
+                          id={el.id}
                           onClick={closeExpanded}
                         >
                           {el.name}
