@@ -8,7 +8,7 @@ import { Icon } from "@iconify/react";
 import Logo from "./images/logo.svg";
 
 // Hero Images (add your images to the /images directory with the same names)
-import HeroLight from "./images/hero-light.jpg";
+import HeroLight from "./images/main-banner.jpg";
 import HeroDark from "./images/main-banner.jpg";
 import NavLogo from "./images/nav-logo.png";
 

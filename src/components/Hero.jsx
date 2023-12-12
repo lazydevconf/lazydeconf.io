@@ -19,6 +19,7 @@ const StyledHero = styled.header`
   max-width: 100%;
   margin: 0 auto;
   min-height: calc(100vh - var(--nav-height));
+  background: rgba(0,0,0,0.4);
 
   &::before {
     content: "";
@@ -59,7 +60,7 @@ const StyledHero = styled.header`
 
   @media (prefers-reduced-motion: no-preference) {
     .hero-img {
-      animation: ${Spin} infinite 2s linear;
+      animation: ${Spin} infinite 2s ease-in;
     }
   }
 

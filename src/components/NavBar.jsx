@@ -96,7 +96,6 @@ export default function NavBar({ Logo }) {
 
   const checkActiveNavLink = () => {
     const activeNavLink = document.querySelectorAll(".nav-link.active:not([id='1T'])").length;
-    console.log(activeNavLink);
     setIsNavLinkActive(activeNavLink);
   }
 

@@ -6,8 +6,9 @@ import { Icon } from "@iconify/react";
 
 // Animations
 export const Spin = keyframes`
-  0% {padding-top: 0px;}
-  100% {padding-top: 20px;}
+  0% {margin-top: 0px;}
+  50% {margin-top: 10px;}
+  100% {margin-top: 0px;}
 `;
 
 const spinner = keyframes`
