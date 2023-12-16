@@ -80,20 +80,20 @@ export default function App() {
     );
   } else {
     return (
-      <HashRouter>
-        <ThemeProvider theme={themes[theme]}>
-          <ScrollToTop />
-          <GlobalStyles />
-          <Element name={"Home"} id="home">
-            <NavBar Logo={navLogo} />
-          </Element>
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route path="/All-Projects" element={<AllProjects />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </ThemeProvider>
-      </HashRouter>
+        <HashRouter>
+          <ThemeProvider theme={themes[theme]}>
+            <ScrollToTop />
+            <GlobalStyles />
+            <Element name={"Home"} id="home">
+              <NavBar Logo={navLogo} />
+            </Element>
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route path="/All-Projects" element={<AllProjects />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </ThemeProvider>
+        </HashRouter>
     );
   }
 }

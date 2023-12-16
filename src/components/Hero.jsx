@@ -5,7 +5,7 @@ import styled from "styled-components";
 // Icons
 import { Icon } from "@iconify/react";
 // Media
-import Logo from "../images/logo.svg";
+import Logo from "../images/animation_banner.svg";
 import { Light, Dark } from "../data";
 // Components
 import { Col, Container, Row } from "react-bootstrap";
@@ -16,9 +16,10 @@ const StyledHero = styled.header`
   position: relative;
   display: grid;
   place-items: center;
-  max-width: 1920px;
+  max-width: 100%;
   margin: 0 auto;
   min-height: calc(100vh - var(--nav-height));
+  background: rgba(0,0,0,0.4);
 
   &::before {
     content: "";
@@ -29,8 +30,12 @@ const StyledHero = styled.header`
     height: 100%;
     background: ${({ theme }) =>
       theme.name === "light"
-        ? "linear-gradient(135deg, var(--primary), var(--bs-light))"
-        : "linear-gradient(135deg, var(--primary), var(--bs-dark))"};
+        ? "linear-gradient(135deg, var(--primary), var(--point))"
+        : "linear-gradient(135deg, var(--primary), var(--point))"};
+    background: ${({ theme }) =>
+      theme.name === "light"
+        ? "-webkit-linear-gradient(135deg, var(--primary), var(--point))"
+        : "-webkit-linear-gradient(135deg, var(--primary), var(--point))"};
     z-index: -2;
   }
 
@@ -55,7 +60,7 @@ const StyledHero = styled.header`
 
   @media (prefers-reduced-motion: no-preference) {
     .hero-img {
-      animation: ${Spin} infinite 20s linear;
+      animation: ${Spin} infinite 2s ease-in;
     }
   }
 
@@ -78,6 +83,28 @@ const StyledHero = styled.header`
       background-size: cover;
     }
   }
+
+  @media screen and (max-width: 1000px) {
+    .title {
+      font-size: 1.815rem !important;
+    }
+  }
+
+  .w-30 {
+    '30% !important'
+  }
+
+  .display-3 {
+    font-weight: 600;
+  }
+
+  .stroke {
+    color: #ff293b;
+  }
+
+  .img-wrapper {
+    height: 300px; 
+  }
 `;
 
 export default function Hero() {
@@ -86,20 +113,17 @@ export default function Hero() {
   return (
     <StyledHero>
       <Container>
+        <Row className="align-items-center text-center img-wrapper">
+          <img
+            src={Logo}
+            alt="React Logo"
+            className="w-25 mx-auto hero-img"
+            // style={{width:'25% !important'}}
+          />
+        </Row>
         <Row className="align-items-center text-center">
-          <Col>
-            <h1 className="mb-3 display-3 title">{name}</h1>
-            <div className="d-flex align-items-center justify-content-center">
-              <SocialLinks />
-            </div>
-          </Col>
-          <Col className="d-none d-md-block">
-            <img
-              src={Logo}
-              alt="React Logo"
-              className="w-75 mx-auto hero-img"
-            />
-          </Col>
+          <h1 className="mb-3 display-3 title">게으른개발자 컨퍼런스</h1>
+          <h1 className="mb-3 display-3 title"><span className="stroke"> 2024.01.27. </span> 삼성동 테크살롱 테이크오프 & 랜딩</h1>
         </Row>
         <Row className="align-items-end down-container">
           <Col className="m-4 text-center">

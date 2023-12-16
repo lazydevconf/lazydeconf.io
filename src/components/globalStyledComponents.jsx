@@ -6,12 +6,9 @@ import { Icon } from "@iconify/react";
 
 // Animations
 export const Spin = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  0% {margin-top: 0px;}
+  50% {margin-top: 10px;}
+  100% {margin-top: 0px;}
 `;
 
 const spinner = keyframes`
@@ -36,7 +33,7 @@ export const Loading = styled.div`
 export const Title = styled.div`
   display: inline-block;
   margin: 0 auto;
-  font-family: "Permanent Marker";
+  font-family: "Pretendard";
   text-align: center;
 
   .underline {

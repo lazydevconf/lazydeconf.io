@@ -9,15 +9,20 @@ import { store } from "./store";
 import "bootstrap/dist/css/bootstrap.css";
 import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import { NavermapsProvider } from 'react-naver-maps';
 
 // https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <Provider store={store}>
-    <AppProvider>
-      <App />
-    </AppProvider>
+      <AppProvider>
+        <NavermapsProvider
+          ncpClientId="j4o164tqxe"
+        >
+          <App />
+        </NavermapsProvider>
+      </AppProvider>
   </Provider>
 );
 

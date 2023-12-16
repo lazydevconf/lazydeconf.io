@@ -7,11 +7,12 @@ Variables
 ===============
 */
 :root {
-  --primary-light: #b0edfd;
+  --primary-light: #0000b3;
   /* Primary Color */
-  --primary: #61DBFB;
-  --primary-dark: #316e7e;
-  --border: 1px solid #61DBFB;
+  --primary: #0000b3;
+  --point: #ff293b;
+  --primary-dark: #0000b3;
+  --border: 1px solid #ff293b;
   --transition: all 0.3s linear;
   --nav-height: 61px;
   --min-footer-height: 11vh;
@@ -30,15 +31,6 @@ body {
 
 a:hover {
   cursor: pointer;
-}
-
-.navbar {
-  border-bottom: var(--border);
-
-  img {
-    background: ${({ theme }) =>
-      theme.name === "light" ? "#45413C" : "#797B7B"};
-  }
 }
 
 .link-icons {
@@ -60,7 +52,8 @@ a:hover {
 }
 
 .title {
-    font-family: "Permanent Marker";
+    font-family: "Pretendard";
+    font-weight: 600
 }
 
 .card {
@@ -84,18 +77,18 @@ a:hover {
 
 @media screen and (min-width: 800px) {
   .link-icons {
-    font-size: 2.5rem;
+      font-size: 5rem;
   }
   .form-group {
       max-width: 750px;
-    }
+  }
 }
 
- @media screen and (min-width: 1367px) {
+@media screen and (min-width: 1367px) {
   .link-icons:hover {
     color: var(--primary);
   }
-  }
+}
 `;
 
 export default GlobalStyles;
