@@ -27,6 +27,7 @@ Global Styles
 body {
   background: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.color};
+  font-family: "Pretendard";
 }
 
 a:hover {
@@ -52,7 +53,6 @@ a:hover {
 }
 
 .title {
-    font-family: "Pretendard";
     font-weight: 600
 }
 
