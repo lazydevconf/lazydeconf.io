@@ -33,6 +33,10 @@ white-space: pre-line;
   }
   @media (max-width: 768px) {
     max-width: 90vw;
+    .title {
+      font-size: 3rem;
+      margin-bottom: 2vh;
+    }
   }
 
 `
