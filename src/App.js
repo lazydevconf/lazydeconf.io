@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAppContext } from "./appContext";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -23,12 +23,11 @@ import Home from "./pages/Home";
 import AllProjects from "./pages/AllProjects";
 import NotFound from "./pages/NotFound";
 
-const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 const themes = {
   light: {
     name: "light",
-    color: "#45413C",
-    background: "#F5F2E8",
+    color: "black",
+    background: "white",
   },
   dark: {
     name: "dark",
@@ -39,26 +38,7 @@ const themes = {
 
 export default function App() {
   const { theme, setTheme } = useAppContext();
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
-  const dispatch = useDispatch();
-
-  React.useEffect(
-    function () {
-      const updateTheme = () =>
-        darkMode ? setTheme("dark") : setTheme("light");
-      updateTheme();
-      dispatch(fetchGitHubInfo());
-      dispatch(fetchGitHubReops());
-    },
-    [setTheme, dispatch]
-  );
-
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", (e) =>
-      e.matches ? setTheme("dark") : setTheme("light")
-    );
+  const [isLoading, setLoading] = useState(false);
 
   if (isLoading) {
     return (
@@ -69,16 +49,7 @@ export default function App() {
         </Container>
       </ThemeProvider>
     );
-  } else if (error) {
-    return (
-      <ThemeProvider theme={themes[theme]}>
-        <GlobalStyles />
-        <Container className="d-flex vh-100 align-items-center justify-content-center">
-          <h2>{error}</h2>
-        </Container>
-      </ThemeProvider>
-    );
-  } else {
+  }else {
     return (
         <HashRouter>
           <ThemeProvider theme={themes[theme]}>

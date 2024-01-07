@@ -11,61 +11,10 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 // Images
 import Logo from "./defaultNavLogo.svg";
 
-// #region styled-components
-const StyledSwitch = styled.label`
-  /* Slider pill */
-  display: flex;
-  width: 3.2rem;
-  font-size: 1.5rem;
-  border-radius: 30px;
-  transition: var(--transition);
-  border: 2px solid;
-
-  /* Hide defualt checkbox */
-  input[type="checkbox"] {
-    height: 0;
-    width: 0;
-    opacity: 0;
-  }
-
-  /* Move span when checked */
-  input[type="checkbox"]:checked + div {
-    transform: translateX(100%);
-  }
-
-  div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: var(--transition);
-  }
-`;
-
 const FixedNavSpacer = styled.div`
   height: var(--nav-height);
 `;
 
-function ThemeToggle() {
-  const { theme, toggleTheme, closeExpanded } = useAppContext();
-
-  return (
-    <StyledSwitch onClick={closeExpanded}>
-      <input
-        type="checkbox"
-        aria-label={`Toggle theme, currently ${theme}.`}
-        onClick={toggleTheme}
-      />
-      <div>
-        {theme === "light" ? (
-          <Icon icon="game-icons:sunflower" />
-        ) : (
-          <Icon icon="game-icons:moon" />
-        )}
-      </div>
-    </StyledSwitch>
-  );
-}
-// #endregion
 
 // #region component
 const propTypes = {
@@ -88,9 +37,10 @@ export default function NavBar({ Logo }) {
     to: [
       { id: "1T", name: "ㄱㄱㅋ 2024", to: "Home" },
       { id: "2T", name: "ㄱㄱㅋ 소개", to: "About" },
-      { id: "3T", name: "발표/프로그램", to: "Skills" },
-      { id: "4T", name: "발표 상세내용", to: "Projects" },
-      { id: "5T", name: "오시는 길", to: "Contact" },
+      { id: "3T", name: "발표/프로그램", to: "Programs" },
+      { id: "4T", name: "후원", to: "Sponsors" },
+      { id: "5T", name: "오시는 길", to: "WayToGo" },
+      { id: "6T", name: "FAQ", to: "Faqs" },
     ],
   };
 
@@ -115,14 +65,14 @@ export default function NavBar({ Logo }) {
         collapseOnSelect={true}
         expand="lg"
         expanded={isExpanded}
-        bg={theme === "light" ? "light" : "dark"}
-        variant={theme === "light" ? "light" : "dark"}
+        bg= "dark"
+        variant= "dark"
         fixed="top"
         style={{
-          borderBottom: isNavLinkActive ? '1px solid #495057' : 'transparent'
+          borderBottom: isNavLinkActive ? '1px solid #495057' : 'transparent',
         }}
       >
-        <Container>
+        <Container fluid="xxl">
           <Navbar.Brand>
             <img
               alt="Logo"
@@ -174,7 +124,11 @@ export default function NavBar({ Logo }) {
                   })}
             </Nav>
             <Nav>
-              <ThemeToggle />
+            <Nav.Item>
+              <a className="nav-link title active" href='https://github.com/lazydevconf/lazydevconf.github.io' target="_blank" rel="noopener">신청
+              <Icon icon="tabler:hand-click" />
+              </a>
+            </Nav.Item>
             </Nav>
           </Navbar.Collapse>
         </Container>

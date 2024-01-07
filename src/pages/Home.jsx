@@ -1,12 +1,11 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { selectData } from "../pages/homeSlice";
 // Components
 import Hero from "../components/Hero";
 import AboutMe from "../components/AboutMe";
-import Skills from "../components/Skills";
-import Projects from "../components/Projects";
-import Contact from "../components/Contact";
+import Programs from "../components/Programs";
+import Sponser from "../components/Sponsors";
+import WayToGo from "../components/WayToGo";
+import Faqs from "../components/Faqs";
 import { BackToTop } from "../components/globalStyledComponents";
 import Footer from "../components/Footer";
 
@@ -22,9 +21,10 @@ export default function Home() {
       <Hero />
       <main>
         <AboutMe />
-        <Skills />
-        <Projects />
-          <Contact />
+        <Programs />
+        <Sponser />
+        <WayToGo />
+        <Faqs />
       </main>
       <BackToTop home={"Home"} />
       <Footer />

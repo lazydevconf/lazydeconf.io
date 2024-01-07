@@ -10,11 +10,14 @@ import Logo from "./images/logo.svg";
 // Hero Images (add your images to the /images directory with the same names)
 import HeroLight from "./images/main-banner.jpg";
 import HeroDark from "./images/main-banner.jpg";
+import Banner from "./images/main-banner.jpg";
+import MinBanner from "./images/main-banner-min.jpg";
 import NavLogo from "./images/nav-logo.png";
 
 // If you change the import names above then you need to change the export names below
 export { HeroLight as Light };
 export { HeroDark as Dark };
+export {Banner, MinBanner};
 
 /* START HERE
  **************************************************************

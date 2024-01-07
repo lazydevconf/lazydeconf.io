@@ -91,7 +91,7 @@ export function BackToTop({ home }) {
   return (
     <StyledDiv ref={up}>
       <Link to={home} className="link-icons">
-        <Icon icon="fa6-solid:circle-chevron-up" />
+        <Icon icon="fa6-solid:circle-chevron-up" width='0.5em' />
       </Link>
     </StyledDiv>
   );

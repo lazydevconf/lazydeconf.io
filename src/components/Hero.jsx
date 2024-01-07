@@ -1,138 +1,65 @@
-import { useSelector } from "react-redux";
-import { selectData } from "../pages/homeSlice";
-import { Link } from "react-scroll";
 import styled from "styled-components";
-// Icons
-import { Icon } from "@iconify/react";
-// Media
-import Logo from "../images/animation_banner.svg";
-import { Light, Dark } from "../data";
+import Banner from "../images/main-banner.jpg";
+// import MinBanner from "../images/main-banner-min.jpg";
+import BannerBackground from "../images/banner-background.jpg";
+import { ReactComponent as Title } from '../images/banner-title.svg';
+import { ReactComponent as Time } from '../images/conference-time.svg';
+import { useEffect, useState } from "react";
+import { useIsMobile } from "../hooks/useIsMobile";
+
 // Components
-import { Col, Container, Row } from "react-bootstrap";
-import { Spin } from "./globalStyledComponents";
-import SocialLinks from "./SocialLinks";
 
 const StyledHero = styled.header`
   position: relative;
-  display: grid;
-  place-items: center;
-  max-width: 100%;
-  margin: 0 auto;
-  min-height: calc(100vh - var(--nav-height));
-  background: rgba(0,0,0,0.4);
+  height: calc(100vh - var(--nav-height));
+  color: white;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+  .banner {
+    max-width: 1920px;
     height: 100%;
-    background: ${({ theme }) =>
-      theme.name === "light"
-        ? "linear-gradient(135deg, var(--primary), var(--point))"
-        : "linear-gradient(135deg, var(--primary), var(--point))"};
-    background: ${({ theme }) =>
-      theme.name === "light"
-        ? "-webkit-linear-gradient(135deg, var(--primary), var(--point))"
-        : "-webkit-linear-gradient(135deg, var(--primary), var(--point))"};
-    z-index: -2;
+    background: url(${Banner}) top left no-repeat;
+    background-size: cover;
+    margin: 0 auto;  
   }
 
-  /* Overlay for contrast */
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+  .mobile-banner {
     height: 100%;
-    background: ${({ theme }) =>
-      theme.name === "light"
-        ? "rgba(255, 255, 255, 0.2)"
-        : "rgba(0, 0, 0, 0.2)"};
-    z-index: -1;
+    background: url(${BannerBackground}) top left no-repeat;
+    background-size: cover;
   }
 
-  .down-container {
-    height: 10rem;
-  }
 
-  @media (prefers-reduced-motion: no-preference) {
-    .hero-img {
-      animation: ${Spin} infinite 2s ease-in;
+  @media (min-width: 1920px) {
+    .banner {
+      max-width: 100%;
+      background-size: 100% 100%;
     }
   }
 
-  @media screen and (min-width: 1180px) {
-    &::before {
-      background: ${({ theme }) =>
-        theme.name === "light"
-          ? `url(${Light}) top center fixed no-repeat`
-          : `url(${Dark}) top center fixed no-repeat`};
-      background-size: 100vw auto;
-    }
+  @media (max-width: 910px) {
   }
 
-  @media screen and (min-width: 1367px) {
-    &::before {
-      background: ${({ theme }) =>
-        theme.name === "light"
-          ? `url(${Light}) center center fixed no-repeat`
-          : `url(${Dark}) center center fixed no-repeat`};
-      background-size: cover;
-    }
-  }
-
-  @media screen and (max-width: 1000px) {
-    .title {
-      font-size: 1.815rem !important;
-    }
-  }
-
-  .w-30 {
-    '30% !important'
-  }
-
-  .display-3 {
-    font-weight: 600;
-  }
-
-  .stroke {
-    color: #ff293b;
-  }
-
-  .img-wrapper {
-    height: 300px; 
+  svg {
+    font-size: 50px;
   }
 `;
 
-export default function Hero() {
-  const { name } = useSelector(selectData);
 
+
+export default function Hero() {
+  const isMobile = useIsMobile();
+  
   return (
     <StyledHero>
-      <Container>
-        <Row className="align-items-center text-center img-wrapper">
-          <img
-            src={Logo}
-            alt="React Logo"
-            className="w-25 mx-auto hero-img"
-            // style={{width:'25% !important'}}
-          />
-        </Row>
-        <Row className="align-items-center text-center">
-          <h1 className="mb-3 display-3 title">게으른개발자 컨퍼런스</h1>
-          <h1 className="mb-3 display-3 title"><span className="stroke"> 2024.01.27. </span> 삼성동 테크살롱 테이크오프 & 랜딩</h1>
-        </Row>
-        <Row className="align-items-end down-container">
-          <Col className="m-4 text-center">
-            <Link to={"About"} className="link-icons">
-              <Icon icon="fa6-solid:circle-chevron-down" />
-            </Link>
-          </Col>
-        </Row>
-      </Container>
+      <div className={`${isMobile ? 'mobile-banner': 'banner'}`}>
+        {isMobile ? 
+          <>
+          <Title className="position-absolute" style={{top: '15%', left: '5%'}} width="90%"/>
+          <Time className="position-absolute" style={{bottom: '5%', left: '5%'}} width="90%"/>
+          </>
+          : ''}
+          
+        </div>
     </StyledHero>
   );
 }

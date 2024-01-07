@@ -1,53 +1,100 @@
-import styled from "styled-components";
-import { useSelector } from "react-redux";
-import { selectData } from "../pages/homeSlice";
+import styled, { keyframes } from "styled-components";
 import { Element } from "react-scroll";
-// Data
-import { moreInfo } from "../data";
 // Components
 import { Col, Container, Row } from "react-bootstrap";
-import { Title } from "./globalStyledComponents";
+import { useInView } from "react-intersection-observer";
+
+const typing = keyframes`
+  from { width: 0; }
+  to { width: 100% }
+`
+
+const blinkCaret = keyframes`
+  from, to { border-color: transparent }
+  50% { border-color: white; }
+`
 
 const StyledAboutMe = styled.section`
+min-height: 100vh;
+max-width: 60vw;
+margin: 0 auto;
+padding: var(--nav-height) 0 20px;
+
+
   p {
-    font-size: 1.25rem;
+    margin-bottom: 0px;
   }
-  .img {
-    width: 18rem;
-    height: 18rem;
+  .title {
+    font-size: 8rem;
+    margin: 0 auto; 
+  }
+
+  .animation {
+    overflow: hidden;
+    border-right: .1em solid white; 
+    white-space: nowrap; 
+
+    animation: 
+    ${typing} 3.5s steps(40, end),
+    ${blinkCaret} .75s step-end infinite;
+  }
+
+  .description {
+    margin-top: 50px;
+    font-size: 2rem;
+  }
+
+  @media (max-width: 1280px) {
+    .title {
+      font-size: 5rem;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .title {
+      font-size: 4rem;
+    }
+  }
+
+  @media (max-width: 960px) {
+    min-height: auto;
+    max-width: 90vw;
+    .title {
+      font-size: 3rem;
+    }
+
+    .description {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    min-height: auto;
+    max-width: 90vw;
+    .title {
+      font-size: 2rem;
+    }
+
+    .description {
+      font-size: 1rem;
+    }
   }
 `;
 
 export default function AboutMe() {
-  const { avatar_url, bio } = useSelector(selectData);
+  const {ref, inView} = useInView({root:null, rootMargin: "0px", threshold: 0});
 
   return (
-    <Element name={"About"} id="about">
-      <StyledAboutMe className="section">
-        <Container>
-          <Container className="d-flex">
-            <Title>
-              <h2>About Me</h2>
-              <div className="underline"></div>
-            </Title>
-          </Container>
-          <Row className="align-items-center mt-5">
-            <Col className="d-flex flex-column text-center">
-              <Container>
-                <p>{bio}</p>
-                {moreInfo && <p>{moreInfo}</p>}
-              </Container>
-            </Col>
-            <Col className="d-none d-md-block text-center">
-              <img
-                src={avatar_url}
-                alt="GitHub Avatar"
-                loading="lazy"
-                className="mx-auto rounded-circle"
-                style={{ width: "15rem", height: "15rem" }}
-              />
-            </Col>
-          </Row>
+    <Element name={"About"} id="about" >
+      <StyledAboutMe className="d-flex flex-column justify-content-center">
+        <Container ref={ref}>
+          <div className={`title ${inView ? 'animation' : ''}`} >
+            <p>느긋한 아이디어로</p>
+            <p>혁신적인 기술을 만나다.</p>
+          </div>
+          <div className="description">
+            <p>게으른 개발자 컨퍼런스는 XXX하지만 XX한 개발자들이 모여 만든 개발자 컨퍼런스입니다.</p>
+          </div>
         </Container>
       </StyledAboutMe>
     </Element>

@@ -7,9 +7,9 @@ Variables
 ===============
 */
 :root {
-  --primary-light: #0000b3;
+  --primary-light: #011f4b;
   /* Primary Color */
-  --primary: #0000b3;
+  --primary: #011f4b;
   --point: #ff293b;
   --primary-dark: #0000b3;
   --border: 1px solid #ff293b;
@@ -17,6 +17,7 @@ Variables
   --nav-height: 61px;
   --min-footer-height: 11vh;
   --card-height: 29rem;
+  overflow-x: hidden;
 }
 
 /*
@@ -28,6 +29,7 @@ body {
   background: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.color};
   font-family: "Pretendard";
+  overflow-x: hidden;
 }
 
 a:hover {
