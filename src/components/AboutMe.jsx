@@ -16,7 +16,7 @@ const blinkCaret = keyframes`
 
 const StyledAboutMe = styled.section`
 min-height: 100vh;
-max-width: 60vw;
+max-width: 80vw;
 margin: 0 auto;
 padding: var(--nav-height) 0 20px;
 
@@ -25,7 +25,7 @@ padding: var(--nav-height) 0 20px;
     margin-bottom: 0px;
   }
   .title {
-    font-size: 8rem;
+    font-size: 7rem;
     margin: 0 auto; 
   }
 
