@@ -4,8 +4,6 @@ import Banner from "../images/main-banner.jpg";
 import BannerBackground from "../images/banner-background.jpg";
 import { ReactComponent as Title } from '../images/banner-title.svg';
 import { ReactComponent as Time } from '../images/conference-time.svg';
-import { useEffect, useState } from "react";
-import { useIsMobile } from "../hooks/useIsMobile";
 
 // Components
 
@@ -15,50 +13,46 @@ const StyledHero = styled.header`
   color: white;
 
   .banner {
-    max-width: 1920px;
+    max-width: 100%;
     height: 100%;
-    background: url(${Banner}) top left no-repeat;
+    background: url(${Banner});
+    background-position: top left;
+    background-repeat: no-repeat;
     background-size: cover;
     margin: 0 auto;  
   }
-
-  .mobile-banner {
-    height: 100%;
-    background: url(${BannerBackground}) top left no-repeat;
-    background-size: cover;
+  svg {
+    display: none;
   }
 
-
-  @media (min-width: 1920px) {
+  @media (max-width: 720px) {
     .banner {
-      max-width: 100%;
-      background-size: 100% 100%;
+      max-width: auto;
+      background: url(${BannerBackground}) top left no-repeat;
+      background-size: cover;  
+    } 
+    svg {
+      display: block;
+      font-size: 50px;
+      width: 90%;
     }
   }
-
-  @media (max-width: 910px) {
+  
+  @media (min-width:720px) and (min-aspect-ratio: 16/9) {
+    height: calc(100vw * 1080 / 1920);
   }
 
-  svg {
-    font-size: 50px;
-  }
 `;
 
 
 
 export default function Hero() {
-  const isMobile = useIsMobile();
   
   return (
     <StyledHero>
-      <div className={`${isMobile ? 'mobile-banner': 'banner'}`}>
-        {isMobile ? 
-          <>
-          <Title className="position-absolute" style={{top: '15%', left: '5%'}} width="90%"/>
-          <Time className="position-absolute" style={{bottom: '5%', left: '5%'}} width="90%"/>
-          </>
-          : ''}
-          
+      <div className='banner'>
+        <Title className="position-absolute" style={{maxWidth: '400px', top: '15%', left: '5%'}} width="90%"/>
+        <Time className="position-absolute" style={{bottom: '5%', left: '5%'}} width="90%"/>
         </div>
     </StyledHero>
   );
