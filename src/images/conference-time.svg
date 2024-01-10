@@ -2,9 +2,16 @@
 <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 785.84 77.07">
   <defs>
     <style>
+       @font-face {
+        font-family: 'Cafe24 Moyamoya';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/Cafe24Moyamoya-Regular-v1.0.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+      }
+
       .cls-1 {
         fill: #fff;
-        font-family: Cafe24Moyamoya-OTF-Face-KSCpc-EUC-H, 'Cafe24 Moyamoya OTF';
+        font-family: Cafe24Moyamoya-OTF-Face-KSCpc-EUC-H, 'Cafe24 Moyamoya';
         font-size: 61.9px;
       }
     </style>

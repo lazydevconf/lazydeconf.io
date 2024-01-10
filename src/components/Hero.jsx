@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Banner from "../images/main-banner.jpg";
 // import MinBanner from "../images/main-banner-min.jpg";
-import BannerBackground from "../images/banner-background.jpg";
+import BannerBackground from "../images/banner-background.png";
 import { ReactComponent as Title } from '../images/banner-title.svg';
 import { ReactComponent as Time } from '../images/conference-time.svg';
 
