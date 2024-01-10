@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Element } from "react-scroll";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
-import foo from '../images/foo.png';
+import foo from "../images/foo.png";
 import { Title, Loading } from "./globalStyledComponents";
 import bolta from "../images/bolta-logo-white.png";
 import styled from "styled-components";
@@ -41,7 +41,6 @@ const Section = styled.section`
     font-weight: 250;
   }
 
-
   @media (max-width: 1280px) {
     .description {
       font-size: 1rem;
@@ -78,29 +77,42 @@ export default function Sponsors() {
 
   return (
     <Element name={"Sponsors"} id="sponsors">
-      <Section className={`d-flex flex-column justify-content-around ${inView ? "in" : ""}`} ref={ref}>
+      <Section
+        className={`d-flex flex-column justify-content-around ${
+          inView ? "in" : ""
+        }`}
+        ref={ref}
+      >
         <div>
-        <p className="title mb-5">Sponsors</p>
-        <Container>
-          <Row>
-            <Col xl={6}>
-              <Card className="p-3">
+          <p className="title mb-5">Sponsors</p>
+          <Container>
+            <Row>
+              <Col xl={6}>
                 <a
                   href="https://bit.ly/4aTsynI"
                   target="_blank"
                   rel="noreferrer"
+                  className="text-decoration-none"
                 >
-                  <img src={bolta} alt="bolta logo" width='75%'  />
+                  <Card className="p-3">
+                    <img
+                      src={bolta}
+                      alt="bolta logo"
+                      width="75%"
+                      className="my-0 mx-auto"
+                    />
+                    <div>
+                      <span className="description">
+                        {
+                          "세금계산서에서 파생되는 모든 문제, \n 볼타가 해결합니다."
+                        }
+                      </span>
+                    </div>
+                  </Card>
                 </a>
-                <div>
-                  <span className="description">
-                    {"세금계산서에서 파생되는 모든 문제, \n 볼타가 해결합니다."}
-                  </span>
-                </div>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
+              </Col>
+            </Row>
+          </Container>
         </div>
         {/* <div>
         <p className="title mb-5">함께하는 사람들</p>
