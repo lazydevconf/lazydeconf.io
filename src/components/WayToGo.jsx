@@ -13,7 +13,7 @@ const StyledSection = styled.section`
 min-height: 100vh;
 max-width: 1280px;
 margin: 0 auto;
-padding: calc(var(--nav-height) + 20px) 0;
+padding-top: var(--nav-height);
 
 opacity: 0;
 transition: 1s all ease-in-out;
@@ -65,13 +65,14 @@ export default function WayToGo() {
       <StyledSection className={`d-flex flex-column justify-content-center ${inView ? 'in' : ''}`} ref={ref} >
 
           <p className="title">오시는 길</p>
-          <div className={`d-flex mb-5 gap-5 align-items-center ${isMobile ? 'flex-column' : ''}`}>
+          <div className={`d-flex justify-content-around align-items-center ${isMobile ? 'flex-column' : 'mb-5'}`}>
             <MapDiv
+            className={`${isMobile ? 'mb-5 w-100' : 'me-5 w-50'}`}
                 style={{
                 height: isMobile ? '300px' :'400px',
-                width: isMobile ? '100%' :'50%',
+                maxWidth: '500px',
+                minWidth: isMobile ? '300px' :'400px',
                 flexBasis: isMobile ? '':'45%',
-                marginBottom: '20px',
                 }}
               >
               <NaverMap
@@ -92,10 +93,10 @@ export default function WayToGo() {
                 </Button>
               </NaverMap>
             </MapDiv>
-            <div className="flex-grow-1 d-flex flex-column align-items-center gap-3">
-                {/* <h1 className="mb-5">테크살롱</h1> */}
+            <div className="d-flex flex-column gap-3">
+                <h1 className="d-none d-md-block">테크살롱</h1>
                 <div className="d-flex gap-5">
-                  {isMobile ? '' : <div><h3>주소</h3></div> }
+                  <div><h3>{isMobile ? '테크살롱' : '주소'}</h3></div>
                   <div className="mb-5">
                     <h4>서울특별시 강남구 테헤란로 411 성담빌딩 13층</h4>
                     <h4>(지번) 서울특별시 강남구 삼성동 142-38</h4>

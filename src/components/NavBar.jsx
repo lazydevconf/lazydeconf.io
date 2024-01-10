@@ -31,8 +31,7 @@ export default function NavBar({ Logo }) {
   const { pathname } = useLocation();
   const navLinks = {
     routes: [
-      { id: "1R", name: "Home", route: "/" },
-      { id: "2R", name: "All Projects", route: "/All-Projects" },
+      { id: "1R", name: "홈으로", route: "/" },
     ],
     to: [
       { id: "1T", name: "ㄱㄱㅋ 2024", to: "Home" },
@@ -125,7 +124,7 @@ export default function NavBar({ Logo }) {
             </Nav>
             <Nav>
             <Nav.Item>
-              <a className="nav-link title active" href='https://github.com/lazydevconf/lazydevconf.github.io' target="_blank" rel="noopener">신청
+              <a className="nav-link title active" href='https://festa.io/events' target="_blank" rel="noopener">신청
               <Icon icon="tabler:hand-click" />
               </a>
             </Nav.Item>

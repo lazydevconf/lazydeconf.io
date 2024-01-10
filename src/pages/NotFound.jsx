@@ -1,6 +1,4 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { selectData } from "../pages/homeSlice";
 import styled from "styled-components";
 // Media
 import Logo from "../images/logo.svg";
@@ -35,24 +33,14 @@ const StyledNotFound = styled.main`
 `;
 
 export default function NotFound() {
-  const { name } = useSelector(selectData);
 
-  React.useEffect(
-    function () {
-      document.title = `${name} | Portfolio`;
-    },
-    [name]
-  );
 
   return (
     <>
       <StyledNotFound>
         <Container className="d-flex justify-content-center">
-          <span>4</span>
-          <img src={Logo} alt="React Logo" className="logo-img" />
-          <span>4</span>
+        <p className="text-center">찾을 수 없는 페이지입니다.</p>
         </Container>
-        <p className="text-center">Sorry, page not found...</p>
       </StyledNotFound>
     </>
   );

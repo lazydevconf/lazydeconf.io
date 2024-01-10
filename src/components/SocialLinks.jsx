@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectData } from "../pages/homeSlice";
 import styled from "styled-components";
 // Data
 import { Blog } from "../data";

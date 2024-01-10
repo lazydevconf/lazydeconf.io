@@ -7,7 +7,6 @@ import Sponser from "../components/Sponsors";
 import WayToGo from "../components/WayToGo";
 import Faqs from "../components/Faqs";
 import { BackToTop } from "../components/globalStyledComponents";
-import Footer from "../components/Footer";
 
 export default function Home() {
   React.useEffect(
@@ -27,7 +26,6 @@ export default function Home() {
         <Faqs />
       </main>
       <BackToTop home={"Home"} />
-      <Footer />
     </>
   );
 }

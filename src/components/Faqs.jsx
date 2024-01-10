@@ -8,7 +8,7 @@ import styled from "styled-components";
 const Section = styled.section`
 opacity: 0;
 transition: 1s all ease-in-out;
-padding: calc(var(--nav-height) + 20px) 0;
+padding-top: calc(var(--nav-height));
 white-space: pre-line;
 
 &.in {
@@ -29,7 +29,7 @@ white-space: pre-line;
   }
 
   .accordion-button {
-    font-size: 1rem;
+    font-weight: 600;
   }
   @media (max-width: 768px) {
     max-width: 90vw;
@@ -44,7 +44,7 @@ white-space: pre-line;
 export default function Sponsors() {
   const {ref, inView} = useInView({root:null, rootMargin: "0px", threshold: 0});
   const faqs = [
-    {header: '행사 신청/확인은 어떻게 하나요?', body: `본 행사는 festa.io를 통해서 신청받습니다. 우측 상단의 신청 버튼을 클릭하거나 https://festa.io/explore 링크로 이동해주세요. \n 신청 후 https://festa.io/my/tickets 에서 내역 확인이 가능합니다.`},
+    {header: '행사 신청/확인은 어떻게 하나요?', body: `본 행사는 festa.io를 통해서 신청할 수 있습니다. 무료 입장권 신청 후 추첨으로 선정합니다. 우측 상단의 신청 버튼을 클릭하여 이동해주세요. \n 신청 후 https://festa.io/my/tickets 에서 내역 확인이 가능합니다.`},
     {header: '행사 당일 주차 지원이 가능한가요?', body: '주차지원은 불가합니다. 가급적 대중교통을 이용하시기를 권장드립니다.'},
     {header: '당일 현장 등록이 가능한가요?', body: '본 행사는 사전에 신청하신 분들만 참석이 가능합니다.'},
     {header: '행사 종료 후 발표 영상이 공개되나요?', body: '본 행사는 영상 녹화를 따로 진행하지 않을 예정입니다. 참가자분들의 양해 부탁드립니다.'},
@@ -60,7 +60,7 @@ export default function Sponsors() {
 
   return (
     <Element name={"Faqs"} id="faqs">
-       <Section className={`d-flex flex-column gap-5 ${inView ? 'in' : ''}`} ref={ref}>
+       <Section className={`d-flex flex-column mt-5 gap-5 ${inView ? 'in' : ''}`} ref={ref}>
         <div className="mb-5">
           <p className="title">FAQ</p>
           <Accordion>

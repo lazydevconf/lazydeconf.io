@@ -18,7 +18,7 @@ const StyledAboutMe = styled.section`
 min-height: 100vh;
 max-width: 80vw;
 margin: 0 auto;
-padding: var(--nav-height) 0 20px;
+padding-top: var(--nav-height);
 
 
   p {

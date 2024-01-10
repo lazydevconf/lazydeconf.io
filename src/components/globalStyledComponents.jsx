@@ -52,7 +52,7 @@ export const Title = styled.div`
 // Back to top link
 const StyledDiv = styled.div`
   position: fixed;
-  bottom: calc(var(--min-footer-height) + 1.5rem);
+  bottom: 1.5rem;
   right: 1.5rem;
   visibility: hidden;
 

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Element } from "react-scroll";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import foo from '../images/foo.png';
 import { Title, Loading } from "./globalStyledComponents";
 import bolta from "../images/bolta-logo-white.png";
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
 import { useIsMobile } from "../hooks/useIsMobile";
+import { Icon } from "@iconify/react";
 
 const Section = styled.section`
   min-height: 100vh;
@@ -15,7 +17,7 @@ const Section = styled.section`
   margin: 0 auto;
   text-align: center;
   flex-basis: content;
-  padding: var(--nav-height) 0 20px;
+  padding-top: var(--nav-height);
 
   opacity: 0;
   transition: 1s all ease-in-out;
@@ -31,7 +33,7 @@ const Section = styled.section`
     font-size: 4rem;
     text-align: center;
     font-weight: 600;
-    margin-bottom: 10vh;
+    margin-bottom: 2vh;
   }
 
   .description {
@@ -39,11 +41,6 @@ const Section = styled.section`
     font-weight: 250;
   }
 
-  img {
-    width: 100%; /* or any custom size */
-    height: 100%;
-    object-fit: contain;
-  }
 
   @media (max-width: 1280px) {
     .description {
@@ -65,6 +62,11 @@ const Section = styled.section`
     border-radius: 10px;
     height: 100%;
   }
+
+  .together {
+    font-size: 2rem;
+    font-weight: 200;
+  }
 `;
 
 export default function Sponsors() {
@@ -73,13 +75,13 @@ export default function Sponsors() {
     rootMargin: "0px",
     threshold: 0,
   });
-  const isMobile = useIsMobile();
 
   return (
     <Element name={"Sponsors"} id="sponsors">
-      <Section className={`d-flex flex-column ${inView ? "in" : ""}`} ref={ref}>
-        <p className="title">Sponsors</p>
-        <Container className="mt-4 mb-3">
+      <Section className={`d-flex flex-column justify-content-around ${inView ? "in" : ""}`} ref={ref}>
+        <div>
+        <p className="title mb-5">Sponsors</p>
+        <Container>
           <Row>
             <Col xl={6}>
               <Card className="p-3">
@@ -88,7 +90,7 @@ export default function Sponsors() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img src={bolta} alt="bolta logo" />
+                  <img src={bolta} alt="bolta logo" width='75%'  />
                 </a>
                 <div>
                   <span className="description">
@@ -99,6 +101,53 @@ export default function Sponsors() {
             </Col>
           </Row>
         </Container>
+        </div>
+        {/* <div>
+        <p className="title mb-5">함께하는 사람들</p>
+        <Container>
+          <Row>
+            <Col xl={4}>
+              <Card className="">
+              <Card.Body className="">
+                <div className="d-flex text-black">
+                  <div className="flex-shrink-0">
+                    <Card.Img
+                      src={foo}
+                      alt="Generic placeholder image"
+                      className="img-fluid"
+                      style={{ width: '180px', borderRadius: '10px' }}
+                    />
+                  </div>
+                  <div className="flex-grow-1 d-flex flex-column justify-content-center ms-3">
+                    <Card.Title as="h5" className="mb-1">이준형</Card.Title>
+                    <Card.Text className="mb-2 pb-1" style={{ color: '#2b2a2a' }}>
+                      @foo <Icon icon="mdi:github" />
+                    </Card.Text>
+                  </div>
+                </div>
+              </Card.Body>
+              </Card>
+            </Col>
+            </Row>
+            <Row>
+            <Col xl={4}>
+              <Card className="p-3">
+              <h1>신수웅</h1>
+              </Card>
+            </Col>
+            <Col xl={4}>
+              <Card className="p-3">
+              <h1>최진영</h1>
+              </Card>
+            </Col>
+            <Col xl={4}>
+              <Card className="p-3">
+              <h1>우혜진</h1>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+        </div> */}
       </Section>
     </Element>
   );
