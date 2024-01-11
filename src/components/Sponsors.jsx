@@ -4,6 +4,7 @@ import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import foo from "../images/foo.png";
 import { Title, Loading } from "./globalStyledComponents";
 import bolta from "../images/bolta-logo-white.png";
+import hanbit from "../images/hanbit.png";
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
 import { useIsMobile } from "../hooks/useIsMobile";
@@ -84,17 +85,17 @@ export default function Sponsors() {
         ref={ref}
       >
         <div>
-          <p className="title mb-5">Sponsors</p>
+          <p className="title mb-5">Sponsor</p>
           <Container>
             <Row>
-              <Col xl={6}>
+              <Col xl={6} className="mb-3">
                 <a
                   href="https://bit.ly/4aTsynI"
                   target="_blank"
                   rel="noreferrer"
                   className="text-decoration-none"
                 >
-                  <Card className="p-3">
+                  <Card className="p-3 ">
                     <img
                       src={bolta}
                       alt="bolta logo"
@@ -110,6 +111,15 @@ export default function Sponsors() {
                     </div>
                   </Card>
                 </a>
+              </Col>
+              <Col xl={6}>
+                  <Card className="p-3">
+                    <img
+                      src={hanbit}
+                      width="75%"
+                      className="my-0 mx-auto"
+                    />
+                  </Card>
               </Col>
             </Row>
           </Container>
