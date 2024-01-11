@@ -112,7 +112,7 @@ export default function Sponsors() {
                   </Card>
                 </a>
               </Col>
-              <Col xl={6}>
+              <Col xl={6} className="mb-3">
                   <Card className="p-3">
                     <img
                       src={hanbit}
