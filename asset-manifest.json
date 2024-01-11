@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.63ffa884.css",
-    "main.js": "/static/js/main.a9897e5b.js",
+    "main.js": "/static/js/main.760549b9.js",
     "static/media/banner-background.png": "/static/media/banner-background.3fda68c50f57504e5b18.png",
     "static/media/time-table.jpg": "/static/media/time-table.4df333d13d40628a6e97.jpg",
     "static/media/main-banner.jpg": "/static/media/main-banner.9004a045ff3a9c9af8c0.jpg",
@@ -9,6 +9,7 @@
     "static/media/main-banner-min.jpg": "/static/media/main-banner-min.a94875d4a10fd8ab3d6a.jpg",
     "service-worker.js": "/service-worker.js",
     "static/media/time-table-header.jpg": "/static/media/time-table-header.008096823be110580daa.jpg",
+    "static/media/hanbit.png": "/static/media/hanbit.7bdb739337afb3eb5838.png",
     "static/media/path-finder.png": "/static/media/path-finder.a10b5b42561abf6da72b.png",
     "static/media/main-logo.png": "/static/media/main-logo.0b42411b683157494e9d.png",
     "static/media/banner-title.svg": "/static/media/banner-title.780ef92a4b11918ba7058a71772d4187.svg",
@@ -17,10 +18,10 @@
     "index.html": "/index.html",
     "static/media/conference-time.svg": "/static/media/conference-time.f3bdbae180e33b579649c49ec04e40a6.svg",
     "main.63ffa884.css.map": "/static/css/main.63ffa884.css.map",
-    "main.a9897e5b.js.map": "/static/js/main.a9897e5b.js.map"
+    "main.760549b9.js.map": "/static/js/main.760549b9.js.map"
   },
   "entrypoints": [
     "static/css/main.63ffa884.css",
-    "static/js/main.a9897e5b.js"
+    "static/js/main.760549b9.js"
   ]
 }
