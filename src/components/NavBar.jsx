@@ -124,7 +124,7 @@ export default function NavBar({ Logo }) {
             </Nav>
             <Nav>
             <Nav.Item>
-              <a className="nav-link title active" href='https://festa.io/events' target="_blank" rel="noopener">신청
+              <a className="nav-link title active" href='https://festa.io/events/4588' target="_blank" rel="noopener">신청
               <Icon icon="tabler:hand-click" />
               </a>
             </Nav.Item>
