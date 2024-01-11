@@ -1,5 +1,5 @@
 import { Element } from "react-scroll";
-import img from '../images/time-table-2.jpg'
+import img from '../images/time-table.jpg'
 import header from '../images/time-table-header.jpg'
 import logo from '../images/main-logo.png'
 import { useInView } from "react-intersection-observer";
